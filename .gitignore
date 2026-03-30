@@ -1,9 +1,11 @@
 # Local .terraform directories
 .terraform/
+**/.terraform/*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*.tfstate.backup
 
 # Crash log files
 crash.log
@@ -15,6 +17,12 @@ crash.*.log
 # to change depending on the environment.
 *.tfvars
 *.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Plan output
+*.tfplan
+*.plan
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
@@ -35,3 +43,13 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Local env files
+.env
+.env.*
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
