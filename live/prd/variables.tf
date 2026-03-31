@@ -12,3 +12,8 @@ variable "environment" {
     error_message = "Environment must be 'dev', 'uat', or 'prd'."
   }
 }
+
+variable "location" {
+  description = "Azure region for resources"
+  type        = string
+}
