@@ -1,24 +1,3 @@
-variable "created_by" {
-  description = "Name or identifier of who deployed this infrastructure"
-  type        = string
-}
-
-variable "environment" {
-  description = "Environment name (dev, uat, or prd only)"
-  type        = string
-
-  validation {
-    condition     = contains(["dev", "uat", "prd"], var.environment)
-    error_message = "Environment must be 'dev', 'uat', or 'prd'."
-  }
-}
-
-variable "location" {
-  description = "Azure region for resources"
-  type        = string
-}
-
-
 variable "virtual_ntw_1" {
   description = "Name of the virtual network"
   type        = string
@@ -47,4 +26,20 @@ variable "vnet_1_subnet_pep" {
 variable "vnet_1_subnet_pep_prefixes" {
   description = "Address prefixes for the PEP subnet"
   type        = list(string)
+}
+
+variable "tags" {
+  description = "Tags to apply to the resource group"
+  type        = map(string)
+  default     = {}
+}
+
+variable "resource_group_name" {
+  description = "resource group name"
+  type = string
+}
+
+variable "resource_group_location" {
+  description = "location of resource group"
+  type = string
 }
